@@ -14,8 +14,11 @@ GROUP_ID = os.getenv("GROUP_ID")
 NAME, PHONE = range(2)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    button = KeyboardButton("🚀 ابدأ التسجيل")
+    keyboard = ReplyKeyboardMarkup([[button]], resize_keyboard=True)
     await update.message.reply_text(
-        "👋 أهلاً! للتسجيل أحتاج منك معلومتين بس.\n\nما اسمك الكريم؟"
+        "👋 أهلاً! اضغط الزر للتسجيل 👇",
+        reply_markup=keyboard
     )
     return NAME
 
